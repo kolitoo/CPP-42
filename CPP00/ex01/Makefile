@@ -6,7 +6,7 @@
 #    By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/16 15:44:35 by abourdon          #+#    #+#              #
-#    Updated: 2023/06/28 21:26:41 by abourdon         ###   ########.fr        #
+#    Updated: 2023/07/19 17:13:19 by abourdon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,8 @@ RESET=\033[0m
 
 	
 SRC = 	phonebook.cpp \
-	phone.class.cpp \
-	contact.class.cpp \
+		Contact.cpp \
+		main.cpp \
 	
 OBJ = $(SRC:.cpp=.o)
 
