@@ -6,13 +6,13 @@
 #    By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/16 15:44:35 by abourdon          #+#    #+#              #
-#    Updated: 2023/07/19 17:13:19 by abourdon         ###   ########.fr        #
+#    Updated: 2023/07/20 11:18:28 by abourdon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Phonebook
 CC = c++
-FLAGS = -Wall -Wextra -Werror -g3
+FLAGS = -Wall -Wextra -Werror
 C98 = -std=c++98
 RM = rm -rf
 

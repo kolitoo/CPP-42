@@ -6,13 +6,13 @@
 #    By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/29 13:24:47 by abourdon          #+#    #+#              #
-#    Updated: 2023/06/30 10:55:51 by abourdon         ###   ########.fr        #
+#    Updated: 2023/07/20 11:18:33 by abourdon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = tests
 CC = c++
-FLAGS = -Wall -Wextra -Werror -g3
+FLAGS = -Wall -Wextra -Werror
 C98 = -std=c++98
 RM = rm -rf
 

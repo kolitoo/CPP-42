@@ -6,13 +6,13 @@
 #    By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/16 15:44:35 by abourdon          #+#    #+#              #
-#    Updated: 2023/06/28 21:27:04 by abourdon         ###   ########.fr        #
+#    Updated: 2023/07/20 11:10:26 by abourdon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = megaphone
 CC = c++
-FLAGS = -Wall -Wextra -Werror -g3
+FLAGS = -Wall -Wextra -Werror
 C98 = -std=c++98
 RM = rm -rf
 

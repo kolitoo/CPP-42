@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 21:22:47 by abourdon          #+#    #+#             */
-/*   Updated: 2023/07/19 18:53:00 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/07/20 11:16:05 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	PhoneBook::add(void)
 	this->_Contact[this->_i].set_nickname(this->find_put_info("Nick Name ? "));
 	this->_Contact[this->_i].set_phonenumber(this->find_put_info("Phone Number ? "));
 	this->_Contact[this->_i].set_darkestsecret(this->find_put_info("Darkest Secret ? "));
+	std::cout << "Contact " << this->_Contact[this->_i].get_firstname() << " added" << std::endl;
 	this->_i++;
 	return ;
 }
