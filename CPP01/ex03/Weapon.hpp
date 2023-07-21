@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 14:02:31 by abourdon          #+#    #+#             */
-/*   Updated: 2023/07/17 14:37:46 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/07/20 11:40:47 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 
 #include <iostream>
 
-class Weapon
+class	Weapon
 {
-    public:
-        Weapon(std::string str);
-        ~Weapon(void);
+	public:
+		Weapon(std::string str);
+		~Weapon(void);
 
-        std::string const   &getType(void);
-        void    setType(std::string str);
+		std::string const	&getType(void);
+		void				setType(std::string str);
 
-    private:
-        std::string _type;
+	private:
+		std::string _type;
 };
 
 #endif
