@@ -6,13 +6,13 @@
 #    By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/19 11:35:06 by abourdon          #+#    #+#              #
-#    Updated: 2023/07/19 11:36:50 by abourdon         ###   ########.fr        #
+#    Updated: 2023/07/21 09:00:03 by abourdon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = harl2.0
 CC = c++
-FLAGS = -Wall -Wextra -Werror -g3
+FLAGS = -Wall -Wextra -Werror
 C98 = -std=c++98
 RM = rm -rf
 

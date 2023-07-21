@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 16:59:18 by abourdon          #+#    #+#             */
-/*   Updated: 2023/07/20 11:58:38 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/07/21 08:59:02 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,11 @@ int	main(int ac, char **av)
 					content.append(line);
 			}
 			inputFile.close();
-			for(std::size_t i = content.find(s1); i != std::string::npos; i = content.find(s1, i + s2.size()))//représente la position invalide ou la valeur de retour spéciale pour les opérations de recherche dans une chaîne (std::string)
+			if (s1.empty() != 1 || s2.empty() != 1)
+			{
+				for(std::size_t i = content.find(s1); i != std::string::npos; i = content.find(s1, i + s2.size()))//représente la position invalide ou la valeur de retour spéciale pour les opérations de recherche dans une chaîne (std::string)
 				content.erase(i, s1.size()).insert(i, s2);
+			}
 			std::ofstream outputFile(outfile.c_str(), std::ios::trunc);//.c_str() permet de convertir une string en const char *. trunc pour ouvrir en trunc(efface tt)
 			if (outputFile.is_open())
 			{
@@ -60,4 +63,3 @@ int	main(int ac, char **av)
 		error_msg("Nombre d'arguments incorrects");
 	return (0);
 }
-

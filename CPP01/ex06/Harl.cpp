@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 14:18:11 by abourdon          #+#    #+#             */
-/*   Updated: 2023/07/19 14:54:38 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/07/21 09:01:50 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,5 @@ void	Harl::complain(std::string level)
 		}
 	}
 	else
-		std::cout << "Write a valid level" << std::endl;
+		std::cout << "Write a valid level: \"debug\", \"info\", \"warning\", \"error\"" << std::endl;
 }

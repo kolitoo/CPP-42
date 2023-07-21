@@ -6,13 +6,13 @@
 #    By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/17 16:59:20 by abourdon          #+#    #+#              #
-#    Updated: 2023/07/17 17:05:05 by abourdon         ###   ########.fr        #
+#    Updated: 2023/07/21 08:58:21 by abourdon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = sed
 CC = c++
-FLAGS = -Wall -Wextra -Werror -g3
+FLAGS = -Wall -Wextra -Werror
 C98 = -std=c++98
 RM = rm -rf
 

@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 11:35:31 by abourdon          #+#    #+#             */
-/*   Updated: 2023/07/19 14:17:18 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/07/21 08:59:48 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ int	main(void)
 	h.complain("info");
 	h.complain("warning");
 	h.complain("error");
+	h.complain("TEST");
 	return (0);
 }
