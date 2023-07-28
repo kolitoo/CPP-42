@@ -6,7 +6,7 @@
 #    By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/26 16:05:23 by abourdon          #+#    #+#              #
-#    Updated: 2023/07/28 15:24:45 by abourdon         ###   ########.fr        #
+#    Updated: 2023/07/28 15:27:30 by abourdon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ RESET=\033[0m
 	
 SRC = 	main.cpp \
 		Fixed.cpp \
+		Point.hpp \
 	
 OBJ = $(SRC:.cpp=.o)
 
