@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 16:05:45 by abourdon          #+#    #+#             */
-/*   Updated: 2023/07/26 16:52:19 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/07/28 11:34:01 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,16 @@ Fixed::Fixed(const Fixed &copy)
 	*this = copy;
 	return ;
 }
-
+/*convertie value en virgule fixe => multiplie par 2 eleve a la puissance du
+nombre de bits de la partie fractionnaire.*/
 Fixed::Fixed(const int value)
 {
 	this->_nb = value << _bits;
 	std::cout << "Int constructor called" << std::endl;
 	return ;
 }
-
+/*pareil qu'avec un int sauf qu'on arrondi. virgule flottante arrondie correctement
+avant la conversion en virgule fixe.*/
 Fixed::Fixed(const float value)
 {
 	this->_nb = roundf(value * (1 << _bits));
@@ -48,7 +50,7 @@ Fixed::~Fixed(void)
 
 int	Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	// std::cout << "getRawBits member function called" << std::endl;
 	return(this->_nb);
 }
 
@@ -58,12 +60,15 @@ void	Fixed::setRawBits(int const raw)
 	std::cout <<"setRawBits member function called" << std::endl;
 	return ;
 }
-
+/*divise la _nb par 2 eleve a la puissance du nombre de bits de la partie
+fractionnaire. Converti en float*/
 float Fixed::toFloat(void) const
 {
 	return ((float)(this->_nb) / (1 << this->_bits));
 }
 
+/*decale la valeur en virgule fixe de bits positions vers la droite, laisse
+seulement les bits de la partie entiere*/
 int	Fixed::toInt(void)const
 {
 	return ((int)(this->_nb >> this->_bits));
@@ -77,6 +82,9 @@ Fixed	&Fixed::operator=(const Fixed &test)
 	return (*this);
 }
 
+/*surcharge operateur de sortie "<<". Converti ce qu'il y a en in grace a tofloat
+et l'affiche sur le flux de sortie out. Lorsque l'on veut afficher un objet, cette surcharge
+permet d'afficher comme s'il s'agissait d'un nombre en virgule flottante normal*/
 std::ostream &operator<<(std::ostream &out, Fixed const &in)
 {
 	out << in.toFloat();
