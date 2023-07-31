@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.hpp                                          :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/28 15:26:21 by abourdon          #+#    #+#             */
-/*   Updated: 2023/07/31 11:31:22 by abourdon         ###   ########.fr       */
+/*   Created: 2023/07/31 13:24:11 by abourdon          #+#    #+#             */
+/*   Updated: 2023/07/31 14:48:56 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef POINT_HPP
-#define POINT_HPP
+# ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
-#include "iostream"
-#include "Fixed.hpp"
+#include <iostream>
 
-class	Point
+class ClapTrap
 {
 	public:
-		Point(void);
-		Point(float x, float y);
-		Point(const Point &copy);
-		~Point(void);
+		ClapTrap(std::string nom);
+		ClapTrap(const ClapTrap &copy);
+		~ClapTrap(void);
 
-		Point&	operator=(const Point &inst);
-		bool	operator==(const Point& inst) const;
-		bool bsp(Point const a, Point const b, Point const c, Point const point);
-		float	find_area(Point const a, Point const b, Point const c);
+		ClapTrap 	&operator=(const ClapTrap &substitue);
+
+		void	attack(const std::string& target);
+		void	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
 
 	private:
-		Fixed _x;
-		Fixed _y;
+		std::string	_name;
+		int			_life_point;
+		int			_energy_point;
+		int			_attack_dmg;
 };
 
 #endif

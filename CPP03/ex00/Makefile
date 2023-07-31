@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/07/26 16:05:23 by abourdon          #+#    #+#              #
-#    Updated: 2023/07/31 10:41:03 by abourdon         ###   ########.fr        #
+#    Created: 2023/07/31 13:23:36 by abourdon          #+#    #+#              #
+#    Updated: 2023/07/31 13:25:13 by abourdon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex03
+NAME = action
 CC = c++
 FLAGS = -Wall -Wextra -Werror
 C98 = -std=c++98
@@ -23,8 +23,7 @@ RESET=\033[0m
 
 	
 SRC = 	main.cpp \
-		Fixed.cpp \
-		Point.cpp \
+		ClapTrap.cpp \
 	
 OBJ = $(SRC:.cpp=.o)
 
