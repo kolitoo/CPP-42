@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 16:05:30 by abourdon          #+#    #+#             */
-/*   Updated: 2023/07/31 11:36:04 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/08/04 11:34:00 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(void)
 	Point a(1, 1);
 	Point b(2, 2);
 	Point c(3, 0);
-	Point point(2.46, 1.08);//arrete
+	//Point point(2.46, 1.08);//arrete
 	//Point point(2, 1);//dans triangle
 	//Point point(2, -1);//exterieur triangle
 

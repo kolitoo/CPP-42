@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:27:13 by abourdon          #+#    #+#             */
-/*   Updated: 2023/07/31 11:34:39 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/08/04 11:30:03 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Point::Point(void): _x(0), _y(0)
 	return ;
 }
 
-Point::Point(float x, float y): _x(x), _y(y)
+Point::Point(const float x, const float y): _x(x), _y(y)
 {
 	return ;
 }

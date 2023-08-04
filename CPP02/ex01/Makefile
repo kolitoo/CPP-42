@@ -6,11 +6,11 @@
 #    By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/26 16:05:23 by abourdon          #+#    #+#              #
-#    Updated: 2023/07/26 16:39:32 by abourdon         ###   ########.fr        #
+#    Updated: 2023/08/04 10:17:49 by abourdon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex02
+NAME = ex01
 CC = c++
 FLAGS = -Wall -Wextra -Werror
 C98 = -std=c++98

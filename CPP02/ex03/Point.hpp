@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:26:21 by abourdon          #+#    #+#             */
-/*   Updated: 2023/07/31 11:31:22 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/08/04 11:29:53 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class	Point
 {
 	public:
 		Point(void);
-		Point(float x, float y);
+		Point(const float x, const float y);
 		Point(const Point &copy);
 		~Point(void);
 

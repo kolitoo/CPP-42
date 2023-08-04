@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 16:05:45 by abourdon          #+#    #+#             */
-/*   Updated: 2023/07/31 10:50:17 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/08/04 11:33:36 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,11 @@ int	Fixed::toInt(void)const
 
 Fixed	&Fixed::operator=(const Fixed &test)
 {
-	// if (this != &test)
-	// 	std::cout << "Copy assignment operator called" << std::endl;
-	this->_nb = test.getRawBits();
+	if (this != &test)
+	{
+		//std::cout << "Copy assignment operator called" << std::endl;
+		this->_nb = test.getRawBits();
+	}
 	return (*this);
 }
 
