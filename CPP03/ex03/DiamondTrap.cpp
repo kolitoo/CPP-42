@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 11:22:27 by abourdon          #+#    #+#             */
-/*   Updated: 2023/08/02 16:34:33 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/08/04 09:48:35 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), Scav
 	_life_point = 100;
 	_energy_point = 50;
 	_attack_dmg = 30;
-	std::cout << "1: " << FragTrap::_life_point << std::endl;
-	std::cout << "2: " << FragTrap::_energy_point << std::endl;
-	std::cout << "3: " << FragTrap::_attack_dmg << std::endl;
 	std::cout << "Constructor DiamondTrap " << _name << " called" << std::endl;
 	return ;
 }
@@ -47,7 +44,7 @@ DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &other)
 
 void	DiamondTrap::whoAmI(void)
 {
-	std::cout << "I am " << this->_name << " and my ClapTrap name is " << ClapTrap::_name << std::endl;
+	std::cout << "DiamondTrap: " << "I am " << this->_name << " and my ClapTrap name is " << ClapTrap::_name << std::endl;
 }
 
 void	DiamondTrap::attack(const std::string& target)

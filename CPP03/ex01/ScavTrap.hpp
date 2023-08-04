@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 10:41:04 by abourdon          #+#    #+#             */
-/*   Updated: 2023/08/02 13:41:48 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/08/04 09:32:04 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class	ScavTrap : public ClapTrap
 
 			ScavTrap &operator=(const ScavTrap &other);
 
-			virtual void	attack(const std::string& target);
+			void	attack(const std::string& target);
 			void	guardGate();
 			void	print_info(void);
 

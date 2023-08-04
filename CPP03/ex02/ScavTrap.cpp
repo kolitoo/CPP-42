@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 10:41:01 by abourdon          #+#    #+#             */
-/*   Updated: 2023/08/02 13:46:40 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/08/04 09:49:37 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,19 +43,18 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 
 void	ScavTrap::guardGate(void)
 {
-	std::cout << "ScavTrap " << _name << " entered in Gate keeper mod" << std::endl;	
+	std::cout << "ScavTrap: " << _name << " entered in Gate keeper mod" << std::endl;	
 }
 
 void	ScavTrap::attack(const std::string& target)
 {
 	if (_energy_point > 0)
 	{
-		_life_point -= _attack_dmg;
 		_energy_point--;
-		std::cout << "ScavTrap " << _name << " attacks " << target << " causing " << _attack_dmg << " points of damage !" << std::endl;
+		std::cout << "ScavTrap: " << _name << " attacks " << target << " causing " << _attack_dmg << " points of damage !" << std::endl;
 	}
 	else
-		std::cout << "ScavTrap " << "u have 0 energy point" << std::endl;
+		std::cout << "ScavTrap: " << "u have 0 energy point" << std::endl;
 	return ;
 }
 

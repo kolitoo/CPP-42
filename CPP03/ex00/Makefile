@@ -6,11 +6,11 @@
 #    By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/31 13:23:36 by abourdon          #+#    #+#              #
-#    Updated: 2023/07/31 13:25:13 by abourdon         ###   ########.fr        #
+#    Updated: 2023/08/04 09:14:01 by abourdon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = action
+NAME = claptrap
 CC = c++
 FLAGS = -Wall -Wextra -Werror
 C98 = -std=c++98

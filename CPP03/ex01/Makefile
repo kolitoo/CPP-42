@@ -6,11 +6,11 @@
 #    By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/31 13:23:36 by abourdon          #+#    #+#              #
-#    Updated: 2023/08/02 10:59:13 by abourdon         ###   ########.fr        #
+#    Updated: 2023/08/04 09:28:34 by abourdon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = serena
+NAME = scavtrap
 CC = c++
 FLAGS = -Wall -Wextra -Werror
 C98 = -std=c++98

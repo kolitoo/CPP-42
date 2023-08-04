@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 13:24:11 by abourdon          #+#    #+#             */
-/*   Updated: 2023/08/02 12:51:10 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/08/04 09:34:33 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,17 @@ class ClapTrap
 		ClapTrap(const ClapTrap &copy);
 		~ClapTrap(void);
 
-		ClapTrap 	&operator=(const ClapTrap &substitue);
+		ClapTrap 		&operator=(const ClapTrap &substitue);
 
 		virtual void	attack(const std::string& target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
+		void			takeDamage(unsigned int amount);
+		void			beRepaired(unsigned int amount);
 
 	protected:
 		std::string	_name;
-		int			_life_point;
-		int			_energy_point;
-		int			_attack_dmg;
+		int				_life_point;
+		int				_energy_point;
+		int				_attack_dmg;
 };
 
 #endif
