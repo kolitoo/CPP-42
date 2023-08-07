@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:27:13 by abourdon          #+#    #+#             */
-/*   Updated: 2023/08/07 14:09:48 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/08/07 14:13:35 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ bool	Point::operator==(const Point& inst) const
 
 float	Point::find_area(Point const a, Point const b, Point const c)
 {
-	return (std::fabs((a._x.toFloat() * (b._y.toFloat() - c._y.toFloat()) + b._x.toFloat() * (c._y.toFloat() - a._y.toFloat()) + c._x.toFloat() * (a._y.toFloat() - b._y.toFloat())) / 2));
+	return (std::fabs((a._x * (b._y - c._y) + b._x * (c._y - a._y) + c._x * (a._y - b._y)).toFloat() / 2));
 }
 
 bool Point::bsp(Point const a, Point const b, Point const c, Point const point)
