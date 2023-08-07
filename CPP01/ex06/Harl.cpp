@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 14:18:11 by abourdon          #+#    #+#             */
-/*   Updated: 2023/07/21 09:01:50 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/08/07 10:45:28 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,20 +60,17 @@ void	Harl::complain(std::string level)
 	std::string levels[4] = {"debug", "info", "warning", "error"};
 
 	int i = this->_getlevel(level, levels);
-	if (i >= 0 && i <= 3)
+	switch (i)
 	{
-		switch (i)
-		{
-			case 0:
-				this->_debug();
-			case 1:
-				this->_info();
-			case 2:
-				this->_warning();
-			case 3:
-				this->_error();
-		}
+		case 0:
+			this->_debug();
+		case 1:
+			this->_info();
+		case 2:
+			this->_warning();
+		case 3:
+			this->_error();
+		default:
+			std::cout << "Write a valid level: \"debug\", \"info\", \"warning\", \"error\"" << std::endl;
 	}
-	else
-		std::cout << "Write a valid level: \"debug\", \"info\", \"warning\", \"error\"" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 10:32:16 by abourdon          #+#    #+#             */
-/*   Updated: 2023/07/17 11:42:45 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/08/07 10:10:40 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Zombie::Zombie(std::string name)
 
 Zombie::~Zombie(void)
 {
-		std::cout << "Zombie " << this->_name << " destroyed" << std::endl;
+	std::cout << "Zombie " << this->_name << " destroyed" << std::endl;
 	return ;
 }
 

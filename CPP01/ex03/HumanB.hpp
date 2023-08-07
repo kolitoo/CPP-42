@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 14:02:21 by abourdon          #+#    #+#             */
-/*   Updated: 2023/07/20 11:41:22 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/08/07 10:49:33 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class	HumanB
 {
 	public:
 		HumanB(std::string str);
+		HumanB(std::string str, Weapon *weaponA);
 		~HumanB(void);
 
 		void	attack(void);

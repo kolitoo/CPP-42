@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 14:02:12 by abourdon          #+#    #+#             */
-/*   Updated: 2023/07/20 11:51:04 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/08/07 10:49:18 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 HumanB::HumanB(std::string str) : _weaponB(NULL), _name(str)
 {
 	std::cout << this->_name << " created without weapon " << std::endl;
+	return ;
+}
+
+HumanB::HumanB(std::string str, Weapon *weaponB) : _weaponB(weaponB), _name(str)
+{
+	std::cout << this->_name << " created with " << this->_weaponB->getType() << std::endl;
 	return ;
 }
 

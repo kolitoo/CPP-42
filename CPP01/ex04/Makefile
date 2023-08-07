@@ -6,7 +6,7 @@
 #    By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/17 16:59:20 by abourdon          #+#    #+#              #
-#    Updated: 2023/07/21 08:58:21 by abourdon         ###   ########.fr        #
+#    Updated: 2023/08/07 11:28:29 by abourdon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ RESET=\033[0m
 
 	
 SRC = 	main.cpp \
+	sed.cpp \
 	
 OBJ = $(SRC:.cpp=.o)
 
