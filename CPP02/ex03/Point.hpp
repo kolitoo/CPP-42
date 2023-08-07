@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:26:21 by abourdon          #+#    #+#             */
-/*   Updated: 2023/08/04 11:29:53 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/08/07 14:02:39 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ class	Point
 		Point(const Point &copy);
 		~Point(void);
 
-		Point&	operator=(const Point &inst);
 		bool	operator==(const Point& inst) const;
 		bool bsp(Point const a, Point const b, Point const c, Point const point);
 		float	find_area(Point const a, Point const b, Point const c);
 
 	private:
-		Fixed _x;
-		Fixed _y;
+		const Fixed _x;
+		const Fixed _y;
+		Point&	operator=(const Point &inst);
 };
 
 #endif

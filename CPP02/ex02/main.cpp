@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 16:05:30 by abourdon          #+#    #+#             */
-/*   Updated: 2023/07/28 11:50:23 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/08/07 13:53:06 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ int main( void )
 	std::cout << b << std::endl;
 	
 	std::cout << Fixed::max( a, b ) << std::endl;
-	
+	std::cout << Fixed::min( a, b ) << std::endl;
 	return 0;
 }
