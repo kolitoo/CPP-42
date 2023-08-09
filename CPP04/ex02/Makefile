@@ -6,11 +6,11 @@
 #    By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/07 16:02:17 by abourdon          #+#    #+#              #
-#    Updated: 2023/08/09 10:14:17 by abourdon         ###   ########.fr        #
+#    Updated: 2023/08/09 11:47:06 by abourdon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = polymorph
+NAME = abstract
 CC = c++
 FLAGS = -Wall -Wextra -Werror
 C98 = -std=c++98
@@ -28,6 +28,7 @@ SRC = 	main.cpp \
 	Dog.cpp \
 	WrongCat.cpp \
 	WrongAnimal.cpp \
+	Brain.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 

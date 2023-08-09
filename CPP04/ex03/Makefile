@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/08/07 16:02:17 by abourdon          #+#    #+#              #
-#    Updated: 2023/08/09 10:14:17 by abourdon         ###   ########.fr        #
+#    Created: 2023/08/09 11:55:19 by abourdon          #+#    #+#              #
+#    Updated: 2023/08/09 17:37:49 by abourdon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = polymorph
+NAME = interface
 CC = c++
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g3
 C98 = -std=c++98
 RM = rm -rf
 
@@ -23,11 +23,11 @@ RESET=\033[0m
 
 	
 SRC = 	main.cpp \
-	Animal.cpp \
-	Cat.cpp \
-	Dog.cpp \
-	WrongCat.cpp \
-	WrongAnimal.cpp \
+	AMateria.cpp \
+	Character.cpp \
+	Cure.cpp\
+	Ice.cpp \
+	MateriaSource.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 
