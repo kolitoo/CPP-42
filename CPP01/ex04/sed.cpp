@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:03:18 by abourdon          #+#    #+#             */
-/*   Updated: 2023/08/07 11:36:10 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/10/20 16:12:28 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,11 @@ void	Sed::ft_sed(char **av)
 		inputFile.close();
 		if (_s1.empty() != 1 || _s2.empty() != 1)
 		{
-			for(std::size_t i = _content.find(_s1); i != std::string::npos; i = _content.find(_s1, i + _s2.size()))//représente la position invalide ou la valeur de retour spéciale pour les opérations de recherche dans une chaîne (std::string)
-				_content.erase(i, _s1.size()).insert(i, _s2);
+			if (_s1.size() != 0)
+			{
+				for(std::size_t i = _content.find(_s1); i != std::string::npos; i = _content.find(_s1, i + _s2.size()))//représente la position invalide ou la valeur de retour spéciale pour les opérations de recherche dans une chaîne (std::string)
+					_content.erase(i, _s1.size()).insert(i, _s2);
+			}
 		}
 		std::ofstream outputFile(_outfile.c_str(), std::ios::trunc);//.c_str() permet de convertir une string en const char *. trunc pour ouvrir en trunc(efface tt)
 		if (outputFile.is_open())

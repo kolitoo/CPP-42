@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 10:32:21 by abourdon          #+#    #+#             */
-/*   Updated: 2023/08/04 10:02:56 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/10/20 10:33:47 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 int	main(void)
 {
-	Zombie	*z = NULL;
-
-	z = z->newZombie("Alex");
-	z->announce();
-	z->randomChump("Bernard");
-	delete z;
+	Zombie *test = NULL;
+	test = test->newZombie("WithNew");//new pour la heap pour pouvoir utiliser hors de la portee du programme
+	test->announce();
+	test->randomChump("WithoutNew");//sur la stack mais on peut utiliser que dans une partie du programme
+	delete test;
 }

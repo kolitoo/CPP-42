@@ -6,11 +6,11 @@
 #    By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/17 12:03:18 by abourdon          #+#    #+#              #
-#    Updated: 2023/07/20 11:30:49 by abourdon         ###   ########.fr        #
+#    Updated: 2023/10/20 10:49:11 by abourdon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = brain
+NAME = pointref
 CC = c++
 FLAGS = -Wall -Wextra -Werror
 C98 = -std=c++98

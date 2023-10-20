@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 12:03:37 by abourdon          #+#    #+#             */
-/*   Updated: 2023/07/20 11:31:38 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/10/20 10:52:03 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,17 @@ int	main(void)
 	std::string &stringREF = str;
 	
 	/*montre les adresses*/
-	std::cout << "ADDRESS" << std::endl << "---------------" << std::endl;
-	std::cout << &str << std::endl;
-	std::cout << stringPTR << std::endl;
-	std::cout << &stringREF << std::endl;
-	std::cout << "---------------" << std::endl;
+	std::cout << "         ADDRESS\n" << "-------------------------" << std::endl;
+	std::cout << "str:       " << &str << std::endl;
+	std::cout << "stringPTR: " << stringPTR << std::endl;
+	std::cout << "stringREF: " << &stringREF << std::endl;
+	std::cout << "-------------------------" << std::endl;
+
 
 	/*montre la valeur pointee*/
-	std::cout << "VALUES" << std::endl << "---------------" << std::endl;
-	std::cout << str << std::endl;
-	std::cout << *stringPTR << std::endl;
-	std::cout << stringREF << std::endl;
-	std::cout << "---------------" << std::endl;
+	std::cout << "         VALUES\n" << "-------------------------" << std::endl;
+	std::cout << "str:       " << str << std::endl;
+	std::cout << "stringPTR: " << *stringPTR << std::endl;
+	std::cout << "stringREF: " << stringREF << std::endl;
+	std::cout << "-------------------------" << std::endl;
 }

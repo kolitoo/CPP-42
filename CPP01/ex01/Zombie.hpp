@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 11:45:11 by abourdon          #+#    #+#             */
-/*   Updated: 2023/07/17 11:58:14 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/10/20 10:40:59 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define ZOMBIEHORDE_HPP
 
 #include <iostream>
+#include <string>
 
 class	Zombie
 {
