@@ -6,11 +6,11 @@
 #    By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/19 14:17:52 by abourdon          #+#    #+#              #
-#    Updated: 2023/07/19 14:53:08 by abourdon         ###   ########.fr        #
+#    Updated: 2023/10/23 11:03:39 by abourdon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = HarlFilster
+NAME = HarlFilter
 CC = c++
 FLAGS = -Wall -Wextra -Werror -g3
 C98 = -std=c++98
