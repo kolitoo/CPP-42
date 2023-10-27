@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:09:18 by abourdon          #+#    #+#             */
-/*   Updated: 2023/08/09 10:10:04 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/10/26 18:19:13 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class	WrongAnimal
 		virtual ~WrongAnimal(void);
 
 		WrongAnimal	&operator=(const WrongAnimal &substitue);
-		virtual void	makeSound() const;
+		void	makeSound() const;
 		std::string	getType() const;
 		
 	protected:
