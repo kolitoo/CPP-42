@@ -6,16 +6,17 @@
 #    By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/11 10:09:48 by abourdon          #+#    #+#              #
-#    Updated: 2023/11/01 09:27:22 by abourdon         ###   ########.fr        #
+#    Updated: 2023/11/01 10:42:20 by abourdon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex00
+NAME = ex01
 CC = c++
 FLAGS = -Wall -Wextra -Werror
 C98 = -std=c++98
 RM = rm -rf
-HEADER = Bureaucrat.hpp
+HEADER = Bureaucrat.hpp \
+	 AForm.hpp \
 
 GREEN=\033[33;32m
 BLUE=\033[0;34m
@@ -25,6 +26,10 @@ RESET=\033[0m
 	
 SRC = 	main.cpp \
 	Bureaucrat.cpp \
+	AForm.cpp \
+	PresidentialPardonForm.cpp \
+	RobotomyRequestForm.cpp \
+	ShrubberyCreationForm.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 

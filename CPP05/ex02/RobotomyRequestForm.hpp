@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/09 10:09:18 by abourdon          #+#    #+#             */
-/*   Updated: 2023/10/27 10:10:03 by abourdon         ###   ########.fr       */
+/*   Created: 2023/11/01 10:39:59 by abourdon          #+#    #+#             */
+/*   Updated: 2023/11/01 10:43:09 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef WRONGANIMAL_HPP
-#define WRONGANIMAL_HPP
+# ifndef ROBOTOMYREQUESTFORM_HPP
+#define ROBOTOMYREQUESTFORM_HPP
 
+#include "AForm.hpp"
 #include <iostream>
 
-class	WrongAnimal
+class RobotomyRequestForm : public AForm
 {
-	public:
-		WrongAnimal(void);
-		WrongAnimal(const WrongAnimal &copy);
-		virtual ~WrongAnimal(void);
+	public :
+		RobotomyRequestForm(std::string target);
+		RobotomyRequestForm(RobotomyRequestForm const& substitue);
+		~RobotomyRequestForm(void);
+		RobotomyRequestForm& operator=(RobotomyRequestForm const&substitue);
+		virtual void	execute(Bureaucrat const& executor) const;
 
-		WrongAnimal	&operator=(const WrongAnimal &substitue);
-		void	makeSound() const;
-		std::string	getType() const;
-		
-	protected:
-		std::string	_type;
+	private :
+		std::string	_target;
 };
 
 #endif

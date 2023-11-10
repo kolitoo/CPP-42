@@ -5,29 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/07 16:02:27 by abourdon          #+#    #+#             */
-/*   Updated: 2023/10/27 10:09:08 by abourdon         ###   ########.fr       */
+/*   Created: 2023/09/11 10:09:44 by abourdon          #+#    #+#             */
+/*   Updated: 2023/11/01 10:23:20 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongCat.hpp" 
+#include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int	main()
 {
-	int	j = 20;
-	AAnimal*	tab[j];
-	//AAnimal	*a = new AAnimal();//Error car class AAnimal abstract
-
-	for(int i = 0; i < j / 2; i++)
-		tab[i] = new Dog();
-	for(int i = j / 2; i < j; i++)
-		tab[i] = new Cat();
-	for(int i = 0; i < j; i++)
-		tab[i]->makeSound();
-	for(int i = 0; i < j; i++)
-		delete tab[i];
-	//a->makeSound();
-	return (0);
+	Form		form("formulaire1", 50, 125);
+	Bureaucrat	bureaucrat("Jean", 51);
+	std::cout << bureaucrat << std::endl;
+	std::cout << form << std::endl;
+	bureaucrat.signForm(form);	
 }

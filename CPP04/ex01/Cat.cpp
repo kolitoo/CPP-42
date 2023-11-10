@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 17:06:47 by abourdon          #+#    #+#             */
-/*   Updated: 2023/08/09 11:27:37 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/10/27 10:05:47 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ Cat::Cat(void): Animal()
 Cat::Cat(const Cat &copy)
 {
 	std::cout << "Cat Copy Constructor called" << std::endl;
-	*this = copy;
+	_type = copy._type;
+	_Brain = new Brain(*copy._Brain);
 	return ;
 }
 
@@ -39,7 +40,8 @@ Cat	&Cat::operator=(const Cat &substitue)
 	if (this != &substitue)
 	{
 		_type = substitue._type;
-		_Brain = substitue._Brain;
+		delete _Brain;
+		_Brain = new Brain(*substitue._Brain);
 	}
 	return (*this);
 }

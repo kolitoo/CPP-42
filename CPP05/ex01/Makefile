@@ -6,7 +6,7 @@
 #    By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/11 10:09:48 by abourdon          #+#    #+#              #
-#    Updated: 2023/09/11 14:31:49 by abourdon         ###   ########.fr        #
+#    Updated: 2023/11/01 09:54:17 by abourdon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,8 @@ CC = c++
 FLAGS = -Wall -Wextra -Werror
 C98 = -std=c++98
 RM = rm -rf
+HEADER = Bureaucrat.hpp \
+	 Form.hpp \
 
 GREEN=\033[33;32m
 BLUE=\033[0;34m
@@ -28,7 +30,7 @@ SRC = 	main.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
-%.o : %.cpp
+%.o : %.cpp $(HEADER)
 	@$(CC) $(FLAGS) $(C98) -c $< -o $@
 
 all : $(NAME)

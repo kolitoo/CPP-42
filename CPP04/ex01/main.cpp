@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 16:02:27 by abourdon          #+#    #+#             */
-/*   Updated: 2023/10/26 18:21:49 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/10/27 10:04:58 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 
 int	main()
 {
-	// Dog basic;
-	// Dog tmp = basic;// a test ???
 	int j= 20;
 	Animal*	tab[j];//check leaks
 

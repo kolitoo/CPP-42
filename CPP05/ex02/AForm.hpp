@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:32:00 by abourdon          #+#    #+#             */
-/*   Updated: 2023/11/01 09:54:10 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/11/01 10:33:10 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef FORM_HPP
-#define FORM_HPP
+# ifndef AFORM_HPP
+#define AFORM_HPP
 
 #include <iostream>
 #include <string>
@@ -20,18 +20,19 @@
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 	public:
-		Form(std::string name, int tosign, int toexecute);
-		Form(Form const& substitue);
-		Form&	operator=(Form const& substitue);
-		~Form(void);
+		AForm(std::string name, int tosign, int toexecute);
+		AForm(Form const& substitue);
+		AForm&	operator=(Form const& substitue);
+		~AForm(void);
 		std::string const&	getName(void) const;
 		int			getTosign(void) const;
 		int			getToexecute(void) const;
 		bool			getissign(void) const;
 		void			beSigned(Bureaucrat const& bureaucrat);
+		virtual void execute(Bureaucrat const& executor) const = 0;
 		
 	private:
 		std::string	_name;

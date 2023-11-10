@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 10:09:52 by abourdon          #+#    #+#             */
-/*   Updated: 2023/11/01 10:22:08 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/11/01 10:25:32 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ std::ostream&	operator<<(std::ostream& flux, Bureaucrat const& bureaucrat)
 	return (flux);
 }
 
-void	Bureaucrat::signForm(Form& form)
+void	Bureaucrat::signForm(aForm& form)
 {
 	try
 	{

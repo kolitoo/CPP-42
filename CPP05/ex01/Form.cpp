@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:32:32 by abourdon          #+#    #+#             */
-/*   Updated: 2023/09/12 14:20:27 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/11/01 10:20:23 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,9 @@ bool			Form::getissign(void) const
 void			Form::beSigned(Bureaucrat const& bureaucrat)
 {
 	if (bureaucrat.getGrade() > getTosign())
+	{
 		throw Form::GradeTooLowException();
+	}
 	if (_issigned == 0)
 		_issigned = 1;
 }
