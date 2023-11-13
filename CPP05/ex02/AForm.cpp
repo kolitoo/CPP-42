@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:32:32 by abourdon          #+#    #+#             */
-/*   Updated: 2023/11/01 10:24:55 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/11/13 14:53:30 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,22 @@ const char*	AForm::GradeTooHighException::what(void) const throw()
 const char*	AForm::GradeTooLowException::what(void) const throw()
 {
 	return ("Error grade too low");
+}
+
+const char*	AForm::UnsignedFormException::what(void) const throw()
+{
+	return ("Error Form unsigned");
+}
+
+const char*	AForm::OpenFileException::what(void) const throw()
+{
+	return ("Error file can't be open");
+}
+
+void	AForm::checkGrade(Bureaucrat const& executor) const
+{
+	if (executor.getGrade() > getToexecute())
+		throw (AForm::GradeTooLowException());
+	if (getissign() == 0)
+		throw (AForm::UnsignedFormException());
 }

@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 10:39:59 by abourdon          #+#    #+#             */
-/*   Updated: 2023/11/01 10:43:09 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/11/13 15:10:32 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "AForm.hpp"
 #include <iostream>
+#include <cstdlib>
 
 class RobotomyRequestForm : public AForm
 {

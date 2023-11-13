@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 10:09:50 by abourdon          #+#    #+#             */
-/*   Updated: 2023/11/01 10:25:40 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/11/13 14:53:18 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 #include "AForm.hpp"
 
-class Form;
+class AForm;
 class	Bureaucrat
 {
 	public:
@@ -32,6 +32,7 @@ class	Bureaucrat
 		void	incremGrade(void);
 		void	decremGrade(void);
 		void	signForm(AForm& form);
+		void	executeForm(AForm const& form);
 
 	private:
 		std::string	_name;
