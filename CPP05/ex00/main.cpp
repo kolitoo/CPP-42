@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 10:09:44 by abourdon          #+#    #+#             */
-/*   Updated: 2023/11/01 09:43:03 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/11/16 10:38:46 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int	main()
 	{
 		//Bureaucrat	bureaucrat("Jean", -2);
 		//Bureaucrat	bureaucrat("Jean", 1);
-		Bureaucrat	bureaucrat("Jean", 150);
-		//Bureaucrat	bureaucrat("Jean", 149);
+		// Bureaucrat	bureaucrat("Jean", 150);
+		Bureaucrat	bureaucrat("Jean", 149);
 
 		bureaucrat.decremGrade();
 		std::cout << bureaucrat << std::endl;

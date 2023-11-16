@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 10:09:50 by abourdon          #+#    #+#             */
-/*   Updated: 2023/11/01 09:53:53 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/11/16 10:51:08 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class	Bureaucrat
 		void	signForm(Form& form);
 
 	private:
-		std::string	_name;
+		const std::string	_name;
 		int			_grade;
 		class GradeTooHighException : public std::exception
 		{

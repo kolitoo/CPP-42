@@ -6,11 +6,13 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 10:09:44 by abourdon          #+#    #+#             */
-/*   Updated: 2023/11/13 15:30:00 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/11/16 13:03:36 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
+
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
@@ -22,7 +24,6 @@ int	main()
 	PresidentialPardonForm	p("TEST");
 
 	b.signForm(p);
-
 	b.executeForm(p);
 }
 
@@ -57,14 +58,12 @@ int	main()
 // 	b.executeForm(p);
 // }
 
-/*Signature impossible*/
+// /*Signature impossible*/
 // int	main()
 // {
 // 	Bureaucrat	b("Paul", 123);
 // 	PresidentialPardonForm	p("TEST");
 
 // 	b.signForm(p);
-
-// 	b.executeForm(p);
 // 	b.executeForm(p);
 // }

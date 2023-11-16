@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:32:00 by abourdon          #+#    #+#             */
-/*   Updated: 2023/11/01 09:54:10 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/11/16 11:17:32 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class Form
 		void			beSigned(Bureaucrat const& bureaucrat);
 		
 	private:
-		std::string	_name;
+		const std::string	_name;
 		bool		_issigned;
 		const int	_tosign;
 		const int	_toexecute;

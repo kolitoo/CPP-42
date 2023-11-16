@@ -6,20 +6,19 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 10:09:52 by abourdon          #+#    #+#             */
-/*   Updated: 2023/11/01 10:22:08 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/11/16 11:12:24 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-Bureaucrat::Bureaucrat(std::string name, int grade)
+Bureaucrat::Bureaucrat(std::string name, int grade): _name(name)
 {
 	if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
-	_name = name;
 	_grade = grade;
 	std::cout << "Bureaucrat constructor called" << std::endl;
 }
@@ -32,10 +31,7 @@ Bureaucrat::Bureaucrat(Bureaucrat const& substitue): _name(substitue._name), _gr
 Bureaucrat&	Bureaucrat::operator=(Bureaucrat const& substitue)
 {
 	if (this != &substitue)
-	{
-		_name = substitue._name;
-		_grade = substitue._grade;
-	}
+		*this = substitue;
 	return (*this);
 }
 
@@ -87,14 +83,6 @@ std::ostream&	operator<<(std::ostream& flux, Bureaucrat const& bureaucrat)
 
 void	Bureaucrat::signForm(Form& form)
 {
-	try
-	{
-		form.beSigned(*this);
-		std::cout << _name << " signed " << form.getName() << std::endl;
-
-	}
-	catch (std::exception const& e)
-	{
-		std::cout << _name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
-	}
+	form.beSigned(*this);
+	std::cout << _name << " signed " << form.getName() << std::endl;
 }

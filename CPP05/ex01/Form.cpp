@@ -6,19 +6,18 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:32:32 by abourdon          #+#    #+#             */
-/*   Updated: 2023/11/01 10:20:23 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/11/16 11:13:41 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(std::string name, int tosign, int toexecute): _tosign(tosign), _toexecute(toexecute)
+Form::Form(std::string name, int tosign, int toexecute): _name(name), _tosign(tosign), _toexecute(toexecute)
 {
 	if (_toexecute < 1 || _tosign < 1)
 		throw Form::GradeTooLowException();
 	if (_toexecute > 150 || _tosign > 150)
 		throw Form::GradeTooHighException();
-	_name = name;
 	_issigned = 0;
 	std::cout << "Form constructor called" << std::endl;
 }
@@ -31,10 +30,7 @@ Form::Form(Form const& substitue): _name(substitue._name), _tosign(substitue._to
 Form&	Form::operator=(Form const& substitue)
 {
 	if (this != &substitue)
-	{
-		_name = substitue._name;
-		_issigned = substitue._issigned;
-	}
+		*this = substitue;
 	return (*this);
 }
 
@@ -67,6 +63,7 @@ void			Form::beSigned(Bureaucrat const& bureaucrat)
 {
 	if (bureaucrat.getGrade() > getTosign())
 	{
+		std::cout << bureaucrat.getName() << " couldn't sign " << getName() << " because grade too low" << std::endl;
 		throw Form::GradeTooLowException();
 	}
 	if (_issigned == 0)

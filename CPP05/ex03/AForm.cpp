@@ -6,19 +6,18 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:32:32 by abourdon          #+#    #+#             */
-/*   Updated: 2023/11/13 14:53:30 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/11/16 13:04:12 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-AForm::AForm(std::string name, int tosign, int toexecute): _tosign(tosign), _toexecute(toexecute)
+AForm::AForm(std::string name, int tosign, int toexecute): _name(name), _tosign(tosign), _toexecute(toexecute)
 {
 	if (_toexecute < 1 || _tosign < 1)
 		throw AForm::GradeTooLowException();
 	if (_toexecute > 150 || _tosign > 150)
 		throw AForm::GradeTooHighException();
-	_name = name;
 	_issigned = 0;
 	std::cout << "AForm constructor called" << std::endl;
 }
@@ -31,10 +30,7 @@ AForm::AForm(AForm const& substitue): _name(substitue._name), _tosign(substitue.
 AForm&	AForm::operator=(AForm const& substitue)
 {
 	if (this != &substitue)
-	{
-		_name = substitue._name;
-		_issigned = substitue._issigned;
-	}
+		*this = substitue;
 	return (*this);
 }
 
