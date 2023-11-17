@@ -9,7 +9,10 @@ class ScalarConverter
 		ScalarConverter(void);
 		ScalarConverter(ScalarConverter const& substitue);
 		~ScalarConverter(void);
+
 		ScalarConverter&	operator=(ScalarConverter const& substitue);
-		void			convert(std::string test);
+
+		static std::string	parsing(std::string arg);
+		static void	convert(std::string test);
 	private:
 };

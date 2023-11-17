@@ -1,9 +1,9 @@
-NAME = ex00
+NAME = convert
 CC = c++
 FLAGS = -Wall -Wextra -Werror
 C98 = -std=c++98
 RM = rm -rf
-HEADER = Bureaucrat.hpp
+HEADER = ScalarConverter.hpp
 
 GREEN=\033[33;32m
 BLUE=\033[0;34m
@@ -12,7 +12,7 @@ RESET=\033[0m
 
 	
 SRC = 	main.cpp \
-	Bureaucrat.cpp \
+	ScalarConverter.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
