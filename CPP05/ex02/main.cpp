@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 10:09:44 by abourdon          #+#    #+#             */
-/*   Updated: 2023/11/16 13:03:36 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/11/21 12:04:14 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,25 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-int	main()
-{
-	Bureaucrat	b("Paul", 5);
-	PresidentialPardonForm	p("TEST");
-
-	b.signForm(p);
-	b.executeForm(p);
-}
-
-// /*Form arbre*/
 // int	main()
 // {
-// 	Bureaucrat	b("Paul", 1);
-// 	ShrubberyCreationForm	p("TEST");
+// 	Bureaucrat	b("Paul", 5);
+// 	PresidentialPardonForm	p("TEST");
 
 // 	b.signForm(p);
-
 // 	b.executeForm(p);
 // }
+
+/*Form arbre*/
+int	main()
+{
+	Bureaucrat	b("Paul", 1);
+	ShrubberyCreationForm	p("TEST");
+
+	b.signForm(p);
+
+	b.executeForm(p);
+}
 
 // /*Form robot*/
 // int	main()
@@ -54,7 +54,6 @@ int	main()
 // {
 // 	Bureaucrat	b("Paul", 1);
 // 	PresidentialPardonForm	p("TEST");
-// 	b.executeForm(p);
 // 	b.executeForm(p);
 // }
 

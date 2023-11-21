@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 10:09:44 by abourdon          #+#    #+#             */
-/*   Updated: 2023/11/13 21:22:05 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/11/21 12:03:50 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@
 
 int	main()
 {
-	Intern someRandomIntern;
+	Intern internn;
 	Bureaucrat	p("Paul", 2);
 	AForm* goodForm;
 	AForm* badForm;
 
 	try
 	{
-		goodForm = someRandomIntern.makeForm("robotomy request", "Bender");
+		goodForm = internn.makeForm("robotomy request", "Bender");
 		p.signForm(*goodForm);
 		p.executeForm(*goodForm);
-		badForm = someRandomIntern.makeForm("robotmy request", "Bender");
+		badForm = internn.makeForm("robotmy request", "Bender");
 		p.signForm(*badForm);
 		p.executeForm(*badForm);
 	}
@@ -38,6 +38,5 @@ int	main()
 		std::cout << e.what() << std::endl;
 	}
 	delete goodForm;
-
 	return (0);
 }

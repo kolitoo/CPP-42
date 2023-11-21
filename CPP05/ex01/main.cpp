@@ -6,7 +6,7 @@
 /*   By: abourdon <abourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 10:09:44 by abourdon          #+#    #+#             */
-/*   Updated: 2023/11/16 11:17:35 by abourdon         ###   ########.fr       */
+/*   Updated: 2023/11/21 11:52:34 by abourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main()
 	try
 	{
 		Form		form("form", 50, 150);
-		Bureaucrat	bureaucrat("Jean", 51);
+		Bureaucrat	bureaucrat("Jean", 50);
 		std::cout << bureaucrat << std::endl;
 		std::cout << form << std::endl;
 		bureaucrat.signForm(form);
