@@ -10,8 +10,6 @@
 class ScalarConverter
 {
 	public:
-		ScalarConverter(void);
-		ScalarConverter(ScalarConverter const& substitue);
 		~ScalarConverter(void);
 
 		ScalarConverter&	operator=(ScalarConverter const& substitue);
@@ -34,4 +32,6 @@ class ScalarConverter
 				virtual const char* what() const throw();
 		};
 	private:
+		ScalarConverter(void);
+		ScalarConverter(ScalarConverter const& substitue);
 };

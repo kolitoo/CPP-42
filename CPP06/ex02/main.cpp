@@ -29,6 +29,7 @@ Base*	generate(void)
 
 void	identify(Base* p)
 {
+	std::cout << "--------- Identify with * ---------\n";
 	if (dynamic_cast<A*>(p) != NULL)
 		std::cout << "Identify an Abase" << std::endl;
 	else if (dynamic_cast<B*>(p) != NULL)
@@ -39,10 +40,34 @@ void	identify(Base* p)
 		std::cout << "ERROR: Unknow base" << std::endl;
 }
 
+void	identify(Base& p)
+{
+	std::cout << "--------- Identify with & ---------\n";
+	try
+	{
+		(void)dynamic_cast<A&>(p);
+		std::cout << "Identify an Abase" << std::endl;
+	}
+	catch (std::exception & e){}
+	try
+	{
+		(void)dynamic_cast<B&>(p);
+		std::cout << "Identify a Bbase" << std::endl;
+	}
+	catch (std::exception & e){}
+	try
+	{
+		(void)dynamic_cast<C&>(p);
+		std::cout << "Identify a Cbase" << std::endl;
+	}
+	catch (std::exception & e){}
+}
+
 int	main(void)
 {
 	Base* obj = generate();
 	identify(obj);
+	identify(*obj);
 
 	delete obj;
 	return (0);
