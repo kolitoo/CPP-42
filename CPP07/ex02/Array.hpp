@@ -18,13 +18,14 @@ class Array
 
 		unsigned int	size() const;
 
-	privaye:
+	private:
 		T*		_array;
 		unsigned int	_size;
-
 		class	forbidenindex : public std::exception
 		{
 			public :
 				virtual const char* what() const throw();
 		};
 };
+
+#include "Array.tpp"

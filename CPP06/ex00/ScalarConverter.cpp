@@ -82,7 +82,7 @@ void	ScalarConverter::printInt(std::string arg)//overflow?
 void	ScalarConverter::printFloat(std::string arg)
 {
 	float	nb = atof(arg.c_str());
-	if (nb > FLT_MAX || nb < FLT_MIN)
+	if (nb > FLT_MAX)
 		throw overflow();
 	if (nb > 127)
 		std::cout << "char : " << "Impossible" << std::endl;
@@ -101,7 +101,7 @@ void	ScalarConverter::printFloat(std::string arg)
 void	ScalarConverter::printDouble(std::string arg)
 {
 	double	nb = atof(arg.c_str());
-	if (nb > DBL_MAX || nb < DBL_MIN)
+	if (nb > DBL_MAX)
 		throw overflow();
 	if (nb > 127)
 		std::cout << "char : " << "Impossible" << std::endl;
