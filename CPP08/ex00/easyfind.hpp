@@ -1,4 +1,13 @@
 #pragma once
 
+#include <iostream>
+#include <algorithm>
+
 template <typename T>
-void	easyfind(T& first, int second);
+int	easyfind(T& first, int second)
+{
+	if (std::find(first.begin(), first.end(), second) == first.end())
+		return (0);
+	else
+		return (1);
+}

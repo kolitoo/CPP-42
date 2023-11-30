@@ -1,9 +1,9 @@
-NAME = ex00
+NAME = ex01
 CC = c++
 FLAGS = -Wall -Wextra -Werror
 C98 = -std=c++98
 RM = rm -rf
-HEADER = easyfind.hpp
+HEADER = Span.hpp
 
 GREEN=\033[33;32m
 BLUE=\033[0;34m
@@ -12,6 +12,7 @@ RESET=\033[0m
 
 
 SRC = 	main.cpp \
+		Span.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
