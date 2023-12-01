@@ -70,17 +70,9 @@ int Span::longestSpan(void)
 {
 	if (_int_tab.size() < 2)
 		throw NotFound();
-	int minElement = _int_tab[0];
-	int maxElement = _int_tab[0];
-
-	for (size_t i = 1; i < _int_tab.size(); ++i)
-	{
-		if (_int_tab[i] < minElement)
-			minElement = _int_tab[i];
-		else if (_int_tab[i] > maxElement)
-			maxElement = _int_tab[i];
-	}
-	return (maxElement - minElement);
+	std::vector<int>::const_iterator	minValue = std::min_element(_int_tab.begin(), _int_tab.end());
+	std::vector<int>::const_iterator	maxValue = std::max_element(_int_tab.begin(), _int_tab.end());
+	return (*maxValue - *minValue);
 }
 
 unsigned int	Span::size(void) const
