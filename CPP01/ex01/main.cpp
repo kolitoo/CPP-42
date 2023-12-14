@@ -15,7 +15,7 @@
 int	main(void)
 {
 	Zombie	*horde = NULL;
-	int	nb = 5;
+	int	nb = -1;
 	if (nb < 0)
 		return (1);
 	horde = horde->zombieHorde(nb, "Bernard");

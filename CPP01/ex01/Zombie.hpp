@@ -22,7 +22,7 @@ class	Zombie
 		Zombie(void);
 		~Zombie(void);
 		
-		Zombie	*zombieHorde(int N, std::string name);
+		Zombie	*zombieHorde(size_t N, std::string name);
 		void	announce(void);
 
 	private:

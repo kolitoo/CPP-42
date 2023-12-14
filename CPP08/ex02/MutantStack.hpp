@@ -7,12 +7,16 @@ template <typename T>
 class	MutantStack : public std::stack<T>
 {
 	public:
-	MutantStack<T>(void) { return ; }
-	MutantStack<T>(const MutantStack<T>& substitue){ *this = substitue; }
-	~MutantStack<T>(void){ return ; }
+		typedef typename std::stack<T>::container_type::iterator iterator;
 
-	MutantStack<T>&	operator=(const MutantStack<T>& substitue) { *this = substitue; return(*this); }
+		MutantStack<T>(void);
+		MutantStack<T>(const MutantStack<T>& substitue);
+		~MutantStack<T>(void);
 
-	private:
+		MutantStack<T>&	operator=(const MutantStack<T>& substitue);
 
+		iterator begin();
+		iterator end();
 };
+
+#include "MutantStack.tpp"
