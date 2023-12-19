@@ -1,9 +1,9 @@
-NAME = btc
+NAME = RPN
 CC = c++
 FLAGS = -Wall -Wextra -Werror
 C98 = -std=c++98 -g3
 RM = rm -rf
-HEADER = BitcoinExchange.hpp
+HEADER = RPN.hpp
 
 GREEN=\033[33;32m
 BLUE=\033[0;34m
@@ -12,14 +12,14 @@ RESET=\033[0m
 
 
 SRC = 	main.cpp \
-		BitcoinExchange.cpp
+	RPN.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
 %.o : %.cpp $(HEADER)
 	@$(CC) $(FLAGS) $(C98) -c $< -o $@
 
-all : $(NAME)
+all : $(NAME)	
 
 $(NAME): $(OBJ)
 	@echo "$(BLUE)$(BOLD)Compiling $(NAME)...$(RESET)"

@@ -75,6 +75,11 @@ int Span::longestSpan(void)
 	return (*maxValue - *minValue);
 }
 
+std::vector<int>	Span::getVector(void) const
+{
+	return (_int_tab);
+}
+
 unsigned int	Span::size(void) const
 {
 	return (_int_tab.size());

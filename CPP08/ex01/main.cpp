@@ -16,6 +16,7 @@ int main(void)
 		std::cout << sp.longestSpan() << std::endl;
 		std::cout << "Span size: " << sp.size() << std::endl;
 		sp.mltpaddNumber(10000);
+		std::cout << sp.getVector()[100] << std::endl;
 		std::cout << "Span size: " << sp.size() << std::endl;
 	}
 	catch (const std::exception &e)

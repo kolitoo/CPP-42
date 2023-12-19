@@ -22,6 +22,7 @@ class   Span
 		int		shortestSpan(void);
 		int		longestSpan(void);
 		unsigned int	size(void) const;
+		std::vector<int>	getVector(void)const;
 
 		class	FullN : public std::exception
 		{

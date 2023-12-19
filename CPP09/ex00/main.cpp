@@ -4,16 +4,18 @@ int	main(int ac, char **av)
 {
 	if (ac == 2)
 	{
-		std::ifstream fichier(av[1]);
-		if (!fichier)
-			return (std::cout << "Error: file or argument isn't a file" << std::endl, 1);
+		std::ifstream file(av[1]);
+		if (!file)
+			return (std::cout << "Error: could not open file." << std::endl, 1);
+		std::ifstream bdd("data.csv");
+		if (!bdd)
+			return (std::cout << "Error: BDD Error." << std::endl, 1);
+		if (bdd.peek() == std::ifstream::traits_type::eof())
+			return (std::cout << "Error: BDD empty." << std::endl, 1);
 		try
 		{
-			std::ifstream file("data.csv");
-			if (!file)
-				return (std::cout << "Error: BDD Error" << std::endl, 1);
-			BitcoinExchange	bitcoinex(file);
-			bitcoinex.PutDataInMap();
+			BitcoinExchange	bitcoinex(bdd, file);
+			bitcoinex.DoTasks();
 		}
 		catch(const std::exception& e)
 		{
@@ -21,6 +23,6 @@ int	main(int ac, char **av)
 		}
 	}
 	else
-		std::cout << "Wrong number of arguments" << std::endl;
+		std::cout << "Wrong number of arguments." << std::endl;
 	return (0);
 }
