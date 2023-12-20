@@ -30,9 +30,14 @@ void	Rpn::Execute(void)
 		{
 			_pile.push(_av[i] - '0');
 		}
-		else
+		else if (_av[i] == '-' && (_av[i + 1] >= '0' && _av[i + 1] <= '9'))
 		{
-			if (i > 1)
+			_pile.push((_av[i + 1] - '0') * -1);
+			i++;
+		}
+		else if (_av[i] != ' ')
+		{
+			if (_pile.size() > 1)
 			{
 				int nb2 = _pile.top();
 				_pile.pop();
@@ -57,7 +62,6 @@ void	Rpn::ParseAv(void)
 	}
 	CheckAndDeleteSpace();
 	CheckOperators();
-	std::cout << _av << std::endl;
 }
 
 void	Rpn::CheckAndDeleteSpace(void)
@@ -68,21 +72,12 @@ void	Rpn::CheckAndDeleteSpace(void)
 			break ;
 		if (_av[i] != ' ' && (_av[i - 1] != ' ' || _av[i + 1] != ' '))
 		{
+			if ((_av[i] == '-' && (_av[i + 1] >= '0' && _av[i + 1] <= '9')) || ((_av[i] >= '0' && _av[i] <= '9') && _av[i - 1] == '-'))
+				continue ;
+			std::cout << _av[i] << std::endl;
 			throw SpaceProblem();
 		}
 	}
-	for (unsigned int i = 1; i <= _av.length() - 1; i++)
-	{
-		if (_av[i] == ' ' && (_av[i - 1] == ' ' || _av[i + 1] == ' '))
-			throw SpaceProblem();
-	}
-	unsigned int i = 0;
-	for (unsigned int j = 0; j < _av.length(); j++)
-	{
-		if (_av[j] != ' ')
-			_av[i++] = _av[j];
-	}
-	_av.resize(i);
 }
 
 void	Rpn::CheckOperators(void)
@@ -92,6 +87,8 @@ void	Rpn::CheckOperators(void)
 	unsigned int countDigit = 0;
 	while (++i <= _av.length() - 1)
 	{
+		if ((_av[i] == '-' && (_av[i + 1] >= '0' && _av[i + 1] <= '9')) || _av[i] == ' ')
+			continue ;
 		if (_av[i] >= '0' && _av[i] <= '9')
 			countDigit++;
 		else
@@ -113,7 +110,7 @@ const char*	Rpn::NonAutorizedChar::what(void) const throw()
 
 const char*	Rpn::SpaceProblem::what(void) const throw()
 {
-	return ("Error: Space Problem.\n");
+	return ("Error: Space/Number Problem.\n");
 };
 
 const char*	Rpn::TwoFirstNb::what(void) const throw()
