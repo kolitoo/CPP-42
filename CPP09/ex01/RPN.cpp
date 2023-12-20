@@ -57,6 +57,7 @@ void	Rpn::ParseAv(void)
 	}
 	CheckAndDeleteSpace();
 	CheckOperators();
+	std::cout << _av << std::endl;
 }
 
 void	Rpn::CheckAndDeleteSpace(void)
@@ -66,7 +67,9 @@ void	Rpn::CheckAndDeleteSpace(void)
 		if ((i == _av.length() - 1) && _av[i] != ' ')
 			break ;
 		if (_av[i] != ' ' && (_av[i - 1] != ' ' || _av[i + 1] != ' '))
+		{
 			throw SpaceProblem();
+		}
 	}
 	for (unsigned int i = 1; i <= _av.length() - 1; i++)
 	{
