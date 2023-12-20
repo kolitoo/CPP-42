@@ -1,4 +1,4 @@
-NAME = ex01
+NAME = span
 CC = c++
 FLAGS = -Wall -Wextra -Werror
 C98 = -std=c++98

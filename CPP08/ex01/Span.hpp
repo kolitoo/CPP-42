@@ -17,11 +17,12 @@ class   Span
 
 		Span&	operator=(Span const& substitue);
 
-		void		addNumber(int Nb);
-		void		mltpaddNumber(unsigned int Nb);
-		int		shortestSpan(void);
-		int		longestSpan(void);
-		unsigned int	size(void) const;
+		void			addNumber(int Nb);
+		void			mltpaddNumber(unsigned int Nb);
+		void 			addNumbers(std::vector<int>::iterator start, std::vector<int>::iterator end);
+		int			shortestSpan(void);
+		int			longestSpan(void);
+		unsigned int		size(void) const;
 		std::vector<int>	getVector(void)const;
 
 		class	FullN : public std::exception

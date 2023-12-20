@@ -17,7 +17,16 @@ int main(void)
 		std::cout << "Span size: " << sp.size() << std::endl;
 		sp.mltpaddNumber(10000);
 		std::cout << sp.getVector()[100] << std::endl;
-		std::cout << "Span size: " << sp.size() << std::endl;
+		
+		//multiaddnumbers sans appel a addnumber en boucle
+		std::vector<int> A(10);
+		std::srand( time ( NULL ) );
+		std::generate( A.begin(), A.end(), std::rand );
+		Span sp1(A.size());
+		sp1.addNumbers(A.begin(), A.end());
+		for (std::vector<int>::iterator it = A.begin(); it!=A.end(); ++it)
+			std::cout << *it << ' ';
+		std::cout << "\n";
 	}
 	catch (const std::exception &e)
 	{

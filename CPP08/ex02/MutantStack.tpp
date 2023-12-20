@@ -26,13 +26,13 @@ MutantStack<T>&	MutantStack<T>::operator=(const MutantStack<T>& substitue)
 }
 
 template <typename T>
-iterator MutantStack<T>::begin()
+typename MutantStack<T>::iterator MutantStack<T>::begin()
 {
 	return (this->c.begin());
 }
 
 template <typename T>
-iterator MutantStack<T>::end()
+typename MutantStack<T>::iterator MutantStack<T>::end()
 {
 	return (this->c.end());
 }

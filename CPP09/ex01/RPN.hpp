@@ -4,6 +4,7 @@
 #include <string>
 #include <stack>
 #include <exception>
+#include <cstdlib>
 
 class Rpn
 {
@@ -12,8 +13,26 @@ class Rpn
 		~Rpn(void);
 
 		void	ParseAv(void);
-		void	SkipSpace(void);
+		void	CheckAndDeleteSpace(void);
+		void	CheckOperators();
+		void	Execute();
+		int	Calculate(int nb1, int nb2, char c);
 		class	NonAutorizedChar : public std::exception
+		{
+			public :
+				virtual const char*	what() const throw();
+		};
+		class	SpaceProblem : public std::exception
+		{
+			public :
+				virtual const char*	what() const throw();
+		};
+		class	WrongOpeNumber : public std::exception
+		{
+			public :
+				virtual const char*	what() const throw();
+		};
+		class	TwoFirstNb : public std::exception
 		{
 			public :
 				virtual const char*	what() const throw();
@@ -21,6 +40,5 @@ class Rpn
 
 	private:
 		std::string	_av;
-		std::string	_expression;
 		std::stack<int>	_pile;
 };

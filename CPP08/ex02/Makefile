@@ -1,4 +1,4 @@
-NAME = ex03
+NAME = mutantstack
 CC = c++
 FLAGS = -Wall -Wextra -Werror
 C98 = -std=c++98

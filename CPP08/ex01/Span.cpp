@@ -30,7 +30,7 @@ Span&	Span::operator=(Span const& substitue)
 
 void	Span::addNumber(int Nb)
 {
-	if (_int_tab.size() >=  _MaxSize)
+	if (_int_tab.size() >= _MaxSize)
 		throw FullN();
 	_int_tab.push_back(Nb);
 }
@@ -39,6 +39,14 @@ void	Span::mltpaddNumber(unsigned int Nb)
 {
 	for (unsigned int i = 0; i < Nb; i++)
 		addNumber(rand() % _MaxSize);
+}
+
+void Span::addNumbers(std::vector<int>::iterator start, std::vector<int>::iterator end)
+{
+	if (_int_tab.size() >= _MaxSize)
+		throw FullN();
+	else
+		_int_tab.assign(start, end);
 }
 
 const char*	Span::FullN::what() const throw()
