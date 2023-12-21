@@ -8,6 +8,19 @@ Rpn::~Rpn(void)
 {
 }
 
+Rpn::Rpn(Rpn const& substitue)
+{
+	if (this != substitue)
+		*this = substitue;
+}
+
+Rpn& Rpn::operator=(Rpn const& substitue)
+{
+	if (this != &substitue)
+		*this = substitue;
+	return (*this);
+}
+
 int	Rpn::Calculate(int nb1, int nb2, char c)
 {
 	if (c == '+')

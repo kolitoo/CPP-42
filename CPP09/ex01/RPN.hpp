@@ -10,7 +10,10 @@ class Rpn
 {
 	public:
 		Rpn(std::string av);
+		Rpn(Rpn const& substitue);
 		~Rpn(void);
+
+		Rpn& operator=(Rpn const& substitue);
 
 		void	ParseAv(void);
 		void	CheckAndDeleteSpace(void);
