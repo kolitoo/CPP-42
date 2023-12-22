@@ -1,6 +1,6 @@
 #include "PmergeMeVec.hpp"
 
-static void	printBefore(char **av)
+void	printBefore(char **av)
 {
 	std::cout << "Before : ";
 	for(unsigned int i = 1; av[i] != NULL; i++)
@@ -24,7 +24,16 @@ int	main(int ac, char **av)
 {
 	if (ac >= 2)
 	{
-		printBefore(av);
+		try
+		{
+			PmergeMeVec	Vect(av);
+			Vect.ParseAndPutInVector();
+			//printBefore(av);
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what();
+		}
 	}
 	else
 	{
