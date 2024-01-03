@@ -1,4 +1,6 @@
 #include "PmergeMeVec.hpp"
+#include <algorithm>
+#include <sys/time.h>
 
 void	printBefore(char **av)
 {
@@ -20,15 +22,25 @@ void	printBefore(char **av)
 	std::cout << std::endl;
 }
 
+long long	GetTime(void)
+{
+	struct timespec ts;
+	clock_gettime(CLOCK_MONOTONIC, &ts);
+	 return static_cast<long long>(ts.tv_sec) * 1000000 + ts.tv_nsec / 1000;
+}
+
 int	main(int ac, char **av)
 {
 	if (ac >= 2)
 	{
 		try
 		{
-			PmergeMeVec	Vect(av);
-			Vect.ParseAndPutInVector();
+			long long time_before = GetTime();
+			PmergeMeVec	Vect(av, ac);
+			Vect.SortVector();
+			long long time_after = GetTime();
 			//printBefore(av);
+			std::cout << "Time to process a range of " << ac - 1 << " elements with std::vector : " << time_after - time_before << " us" << std::endl;
 		}
 		catch(const std::exception& e)
 		{
@@ -42,3 +54,4 @@ int	main(int ac, char **av)
 	}
 	return (0);
 }
+
