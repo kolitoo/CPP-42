@@ -3,7 +3,8 @@ CC = c++
 FLAGS = -Wall -Wextra -Werror
 C98 = -std=c++98 -g3
 RM = rm -rf
-HEADER = PmergeMeVec.hpp
+HEADER = PmergeMeVec.hpp \
+	 PmergeMeDeque.hpp \
 
 GREEN=\033[33;32m
 BLUE=\033[0;34m
@@ -13,6 +14,7 @@ RESET=\033[0m
 
 SRC = 	main.cpp \
 	PmergeMeVec.cpp \
+	PmergeMeDeque.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 

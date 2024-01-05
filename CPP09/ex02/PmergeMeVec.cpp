@@ -21,12 +21,13 @@ PmergeMeVec&	PmergeMeVec::operator=(const PmergeMeVec& substitue)
 	return (*this);
 }
 
-void displayVector(const std::vector<t_nbr>& vec) {
-    std::cout << "Vecteur : ";
-    for (std::vector<t_nbr>::const_iterator it = vec.begin(); it != vec.end(); ++it) {
-        std::cout << it->nb << " ";
-    }
-    std::cout << std::endl;
+int Jacobsthal(int n)
+{
+	if (n == 0)
+		return 0;
+	else if (n == 1)
+		return 1;
+	return Jacobsthal(n - 1) + 2 * Jacobsthal(n - 2);
 }
 
 void	mergeSort(std::vector<t_nbr>::iterator iter1, std::vector<t_nbr>::iterator iter2)
@@ -42,35 +43,71 @@ void	mergeSort(std::vector<t_nbr>::iterator iter1, std::vector<t_nbr>::iterator 
 	}
 }
 
+void	PmergeMeVec::CreatePending(void)
+{
+	// unsigned int	index = 1;
+	for (unsigned int i = 0; i < _PeerArray.size(); i++)
+	{
+		if ((_ac - 1) % 2 != 0 && i == _PeerArray.size() - 1)
+		{
+			//_PeerArray[i].index = index;
+			_PendArray.push_back(_PeerArray[i]);
+			_PeerArray.pop_back();
+		}
+		else
+		{
+			// _PeerArray[i].index = index;
+			if (_PeerArray[i].peer != NULL)
+			{
+			//	_PeerArray[i].peer->index = index;
+				_PendArray.push_back(*_PeerArray[i].peer);
+				_PeerArray[i].peer = NULL;
+			}
+			//index++;
+		}
+	}
+}
+
+void	PmergeMeVec::BinarySearch(void)
+{
+	for (std::vector<t_nbr>::iterator it = _PendArray.begin(); it != _PendArray.end(); ++it)
+	{
+		t_nbr temp;
+		//temp.index = it->index;
+		temp.nb = it->nb;
+		temp.peer = NULL;
+		//temp.Jacobsthalvalue = it->Jacobsthalvalue;//A L AIDE
+
+		_PeerArray.insert(std::upper_bound(_PeerArray.begin(), _PeerArray.end(), temp), temp);
+	}
+}
+
+void	PmergeMeVec::CreateIntTab(void)
+{
+	for (std::vector<t_nbr>::iterator it = _PeerArray.begin(); it != _PeerArray.end(); it++)
+	{
+		_IntArray.push_back(it->nb);
+	}
+}
+
 void	PmergeMeVec::SortVector(void)
 {
 	ParseAndPutInVector();
 	CreatePeer();
-	for (unsigned int i = 0; i < _PeerArray.size(); i++)
-	{
-		std::cout <<_PeerArray[i].nb << " | ";
-		if (_PeerArray[i].peer != NULL)
-			std::cout <<_PeerArray[i].peer->nb << "---INDEX:" << _PeerArray[i].nb << std::endl;
-		else
-			std::cout << "---INDEX:" << _PeerArray[i].nb << std::endl;
-	}
-	std::cout << "\n----------\n";
 	if (((_ac - 1) % 2 == 0))
 		mergeSort(_PeerArray.begin(), _PeerArray.end());
 	else
 		mergeSort(_PeerArray.begin(), _PeerArray.end() - 1);
-	_PeerArray.insert(_PeerArray.begin(), *_PeerArray[0].peer);
-	_PeerArray[0].peer = NULL;
-	_PeerArray[1].peer = NULL;
-	for (unsigned int i = 0; i < _PeerArray.size(); i++)
+	if (_ac > 2)
 	{
-		std::cout <<_PeerArray[i].nb << " | ";
-		if (_PeerArray[i].peer != NULL)
-			std::cout <<_PeerArray[i].peer->nb << "---INDEX:" << _PeerArray[i].nb << std::endl;
-		else
-			std::cout << "---INDEX:" << _PeerArray[i].nb << std::endl;
+		_PeerArray.insert(_PeerArray.begin(), *_PeerArray[0].peer);
+		_PeerArray[0].peer = NULL;
+		_PeerArray[1].peer = NULL;
 	}
-	std::cout << "\n";
+	CreatePending();
+	BinarySearch();
+	std::cout << std::endl;
+	CreateIntTab();
 }
 
 void	PmergeMeVec::CreatePeer(void)
@@ -91,6 +128,7 @@ void	PmergeMeVec::CreatePeer(void)
 			else
 				_PeerArray.push_back(_Array[i + 1]);
 		}
+		//index++;
 	}
 }
 
@@ -103,18 +141,12 @@ void	PmergeMeVec::ParseAndPutInVector(void)
 		CheckIfNumbers(line);
 		t_nbr	value;
 		value.nb = std::atoi(line.c_str());
-		value.index = 0;
+		//value.index = 0;
+		value.Jacobsthalvalue = Jacobsthal(value.nb);
 		if (value.nb > 2147483647)
 			throw Overflow();
 		_Array.push_back(value);
 		i++;
-	}
-	std::vector<t_nbr> ArrayCopy = _Array;
-	std::sort(ArrayCopy.begin(), ArrayCopy.end());
-	for (size_t i = 1; i < ArrayCopy.size(); ++i)
-	{
-		if (ArrayCopy[i - 1].nb == ArrayCopy[i].nb)
-			throw Doublon();
 	}
 }
 
@@ -129,9 +161,9 @@ void	PmergeMeVec::CheckIfNumbers(std::string nb)
 	}
 }
 
-std::vector<t_nbr>	PmergeMeVec::GetArray(void)
+std::vector<int>	PmergeMeVec::GetArray(void)
 {
-	return (_Array);
+	return (_IntArray);
 }
 
 const char*	PmergeMeVec::NotANumber::what(void) const throw()
@@ -151,22 +183,6 @@ const char*	PmergeMeVec::Overflow::what(void) const throw()
 
 bool	t_nbr::operator<(const struct_nbr& other) const
 {
-	return (nb < other.nb);
+	return(nb < other.nb);
+	//return Jacobsthalvalue < other.Jacobsthalvalue;//ALORS PEU ETRE ?
 }
-
-// struct_nbr& t_nbr::operator=(const struct_nbr* other)
-// {
-// 	if (this != other)
-// 	{
-// 		nb = other->nb;
-// 		index = other->index;
-// 		if (other->peer)
-// 		{
-// 			peer = new struct_nbr;
-// 			*peer = *(other->peer);
-// 		}
-// 		else
-// 			peer = NULL;
-// 	}
-// 	return *this;
-// }

@@ -9,7 +9,8 @@
 typedef struct	struct_nbr
 {
 	unsigned int	nb;
-	int	index;
+	//unsigned int	index;
+	int Jacobsthalvalue;
 	struct_nbr	*peer;
 	bool	operator<(const struct_nbr& other) const;
 	// struct_nbr& operator=(const struct_nbr *other);
@@ -28,8 +29,10 @@ class PmergeMeVec
 		void	ParseAndPutInVector(void);
 		void	CheckIfNumbers(std::string nb);
 		void	CreatePeer(void);
-		void	CreateSortArray(void);
-		std::vector<t_nbr>	GetArray(void);
+		void	CreatePending(void);
+		void	BinarySearch(void);
+		void	CreateIntTab(void);
+		std::vector<int>	GetArray(void);
 
 		class	NotANumber : public std::exception
 		{
@@ -52,5 +55,6 @@ class PmergeMeVec
 		int			_ac;
 		std::vector<t_nbr>	_Array;
 		std::vector<t_nbr>	_PeerArray;
-		std::vector<t_nbr>	_SortArray;
+		std::vector<t_nbr>	_PendArray;
+		std::vector<int>	_IntArray;
 };
