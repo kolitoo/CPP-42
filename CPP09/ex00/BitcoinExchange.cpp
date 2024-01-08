@@ -94,7 +94,7 @@ int	BitcoinExchange::PipeCheck(std::string line)
 {
 	size_t	pipePos = line.find('|');
 	if (pipePos == std::string::npos)
-		return ((std::cout << "Error : bad input ==> " << line << std::endl), 1);
+		return ((std::cout << "Error : bad input ==> \"" << line << "\"" << std::endl), 1);
 	if (pipePos > 0 && line[pipePos - 1] == ' ')
 	{
 		if (pipePos < line.size() - 1 && line[pipePos + 1] == ' ')
@@ -169,7 +169,7 @@ int	BitcoinExchange::CheckDate(void)
 	std::getline(iss, month, '-');
 	std::getline(iss, day);
 	day = trim(day);
-	if (CheckDay(day, month) == 1)
+	if (CheckDay(day, month, year) == 1)
 		return (1);
 	return (0);
 }
@@ -194,7 +194,12 @@ int	BitcoinExchange::CheckYear(std::string	year)
 	return (0);
 }
 
-int	BitcoinExchange::CheckDay(std::string	day, std::string	month) const
+bool IsBisextile(int annee)
+{
+	return (annee % 4 == 0 && (annee % 100 != 0 || annee % 400 == 0));
+}
+
+int	BitcoinExchange::CheckDay(std::string	day, std::string	month, std::string	year) const
 {
 	if (day.length() != 2 || month.length() != 2)
 	{
@@ -217,6 +222,13 @@ int	BitcoinExchange::CheckDay(std::string	day, std::string	month) const
 		}
 		break;
 	case 2:
+		if (dayy == 29)
+		{
+			if (!IsBisextile(atoi(year.c_str())))
+				return (std::cout << "Error: Day error." << std::endl, 1);
+			else
+				break ;
+		}
 		if (dayy <= 0 || dayy > 28)
 		{
 			if (_bool == 0)

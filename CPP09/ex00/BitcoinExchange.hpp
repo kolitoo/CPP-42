@@ -23,7 +23,7 @@ class BitcoinExchange
 		void	PutDataInMap(void);
 		void	printmap(void) const;
 		int	CheckDate(void);
-		int	CheckDay(std::string	day, std::string month) const;
+		int	CheckDay(std::string	day, std::string month, std::string year) const;
 		int	CheckYear(std::string	year);
 		int	CheckValue(void) const;
 		void	DoTasks(void);

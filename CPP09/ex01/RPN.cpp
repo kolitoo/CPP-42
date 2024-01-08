@@ -10,7 +10,7 @@ Rpn::~Rpn(void)
 
 Rpn::Rpn(Rpn const& substitue)
 {
-	if (this != substitue)
+	if (this != &substitue)
 		*this = substitue;
 }
 
@@ -113,7 +113,7 @@ void	Rpn::CheckOperators(void)
 
 const char*	Rpn::WrongOpeNumber::what(void) const throw()
 {
-	return ("Error: Wrong number of operators.\n");
+	return ("Error: Wrong number of numbers/operators.\n");
 };
 
 const char*	Rpn::NonAutorizedChar::what(void) const throw()

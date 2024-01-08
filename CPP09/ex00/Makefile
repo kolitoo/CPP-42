@@ -12,7 +12,7 @@ RESET=\033[0m
 
 
 SRC = 	main.cpp \
-		BitcoinExchange.cpp
+	BitcoinExchange.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
