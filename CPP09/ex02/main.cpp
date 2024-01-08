@@ -41,6 +41,17 @@ long long	GetTime(void)
 	 return static_cast<long long>(ts.tv_sec) * 1000000 + ts.tv_nsec / 1000;
 }
 
+template <typename T>
+bool estTrie(T conteneur)
+{
+	for (unsigned int i = 0; i < conteneur.size() - 1; ++i)
+	{
+		if (conteneur[i] > conteneur[i + 1])
+			return false;
+	}
+	return true;
+}
+
 int	main(int ac, char **av)
 {
 	if (ac >= 2)
@@ -53,11 +64,13 @@ int	main(int ac, char **av)
 			long long time_after = GetTime();
 			printBefore(av);
 			printAfter(Vect.GetArray());
+			//std::cout << estTrie(Vect.GetArray()) << std::endl;
 			std::cout << "Time to process a range of " << ac - 1 << " elements with std::vector<int> : " << time_after - time_before << " microsecondes" << std::endl;
 			time_before = GetTime();
 			PmergeMeDeque	Dequ(av, ac);
 			Dequ.SortDeque();
 			time_after = GetTime();
+			//std::cout << estTrie(Dequ.GetArray()) << std::endl;
 			std::cout << "Time to process a range of " << ac - 1 << " elements with std::Deque<int> : " << time_after - time_before << " microsecondes" << std::endl;
 		}
 		catch(const std::exception& e)

@@ -9,11 +9,8 @@
 typedef struct	struct_nbr
 {
 	unsigned int	nb;
-	//unsigned int	index;
-	int Jacobsthalvalue;
 	struct_nbr	*peer;
 	bool	operator<(const struct_nbr& other) const;
-	// struct_nbr& operator=(const struct_nbr *other);
 }t_nbr;
 
 class PmergeMeVec
@@ -33,13 +30,7 @@ class PmergeMeVec
 		void	BinarySearch(void);
 		void	CreateIntTab(void);
 		std::vector<int>	GetArray(void);
-
 		class	NotANumber : public std::exception
-		{
-			public :
-				virtual const char*	what() const throw();
-		};
-		class	Doublon : public std::exception
 		{
 			public :
 				virtual const char*	what() const throw();
